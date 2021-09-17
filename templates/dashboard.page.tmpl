@@ -1,7 +1,79 @@
 {{template "basenav" .}}
 
 {{define "content"}}
-<div>
-  <!-- <h2 class="bg-dark rounded-3">HEllo</h2> -->
+<div class="row d-flex justify-content-between">
+  <div class="col-12">
+    <div class="card border-0 border-radius-lg bg-white">
+      <div class="card-body d-flex align-items-center justify-content-between">
+        <div class="col-auto">
+          <h4 class="p-0 m-0">Dashboard</h4>
+        </div>
+        <div class="col-auto my-auto">
+          <div class="form-floating my-auto">
+            <input type="search" class="form-control" id="floatingInput" placeholder="search">
+            <label for="floatingInput">Search</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-between mt-4">
+  <div class="col-3">
+    <div class="card border-0 border-radius-lg bg-blue-lighter">
+      <div class="card-body d-flex align-items-center justify-content-between">
+        <div class="col-auto">
+          <h2 class="p-0 m-0">21</h2>
+          <p class="p-0 m-0 text-muted">Clients</p>
+        </div>
+        <div class="col-auto">
+          <i class='fg-blue-dark bx bx-group nav-icon bg-blue-light p-3 fs-1'></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="card border-0 border-radius-lg bg-blue-lighter">
+      <div class="card-body d-flex align-items-center justify-content-between">
+        <div class="col-auto">
+          <h2 class="p-0 m-0">7</h2>
+          <p class="p-0 m-0 text-muted">Revoked</p>
+        </div>
+        <div class="col-auto">
+          <i class='fg-blue-dark bx bx-x nav-icon bg-blue-light p-3 fs-1'></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="card border-0 border-radius-lg bg-blue-lighter">
+      <div class="card-body d-flex align-items-center justify-content-between">
+        <div class="col-auto">
+          <h2 class="p-0 m-0">122</h2>
+          <p class="p-0 m-0 text-muted">Uptime</p>
+        </div>
+        <div class="col-auto">
+          <i class='fg-blue-dark bx bx-stopwatch nav-icon bg-blue-light p-3 fs-1'></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="card border-0 border-radius-lg bg-blue-lighter">
+      <div class="card-body d-flex align-items-center justify-content-between">
+        <div class="col-auto">
+          <h2 class="p-0 m-0">2.34</h2>
+          <p class="p-0 m-0 text-muted">Version</p>
+        </div>
+        <div class="col-auto">
+          <i class='fg-blue-dark bx bx-info-circle nav-icon bg-blue-light p-3 fs-1'></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {{end}}
