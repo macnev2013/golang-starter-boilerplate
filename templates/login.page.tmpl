@@ -1,0 +1,47 @@
+{{template "base" .}}
+
+{{define "content"}}
+<div class="container vertical-center">
+  <div class="py-3 px-5 bg-main align-items-center border-radius-xl">
+    <div class="row align-items-center py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">OpenVPN GUI</h1>
+        <hr>
+        <p class="col-lg-10 fs-4">
+          Create quick to deploy and easy to use solution that makes work with small OpenVPN environments a breeze.
+
+        </p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border-radius-lg bg-white">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-6">
+              <button class="w-100 btn btn-lg text-white accent-button" type="submit">Log in
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="w-100 btn btn-lg accent-button-outline" type="submit">Sign up
+              </button>
+            </div>
+          </div>
+          <hr class="my-4">
+          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{end}}

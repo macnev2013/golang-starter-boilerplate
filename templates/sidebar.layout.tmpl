@@ -1,0 +1,97 @@
+{{define "sidebar"}}
+<nav>
+    <div class="sidebar d-flex flex-column p-3 border-radius-xl custom-shadow-1">
+        <div class="profile-info">
+            <label class="d-flex py-4 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#profileCollapse" aria-expanded="false" aria-controls="profileCollapse">
+                <img src="https://miro.medium.com/max/700/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" alt="logo" width="40"
+                    height="40" class="me-3 ml-3 rounded-circle" />
+                <span>
+                    <p class="m-0 fw-bold">Nevil</p>
+                    <p class="m-0 small">Devops Engineer</p>
+                </span>
+            </label>
+            <div class="collapse my-2" id="profileCollapse">
+                <div class="container">
+                    <ul class="nav nav-pills flex-column mb-auto mt-4">
+                        <li class="nav-item dropdown-nav-item">
+                            <a href="" class="nav-link custom-link d-flex">
+                                <i class='bx bx-user nav-icon' ></i>
+                                <span class="nav-text">Account</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown-nav-item">
+                            <a href="" class="nav-link custom-link d-flex">
+                                <i class='bx bx-log-out nav-icon'></i>
+                                <span class="nav-text">Sign out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <ul class="nav nav-pills flex-column mb-auto mt-4">
+            <li class="nav-item">
+                <a href="" class="nav-link custom-link d-flex">
+                    <i class='bx bxs-dashboard nav-icon'></i>
+                    <span class="nav-text">Admin</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link custom-link d-flex">
+                    <i class='bx bx-edit-alt nav-icon'></i>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link custom-link d-flex">
+                    <i class='bx bx-check-shield nav-icon' ></i>
+                    <span class="nav-text">Certificates</span>
+                </a>
+            </li>
+        </ul>
+        <hr>
+        
+        <div class="profile-info py-1">
+            <label class="py-2 px-3 d-flex justify-content-between link-dark text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapse" aria-expanded="false" aria-controls="appCollapse">
+            <!-- <label class="py-2 px-2 d-flex justify-content-between link-dark text-decoration-none"
+                id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false"> -->
+                <div class="d-flex align-items-center">
+                    <i class='bx bx-lock-open nav-icon'></i>
+                    <span class="nav-text">OpenVPN</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <i class='bx bx-down-arrow-alt fs-5'></i>
+                </div>
+            </label>
+
+            <div class="collapse my-2" id="appCollapse">
+                <div class="container">
+                    <ul class="nav nav-pills flex-column mb-auto mt-4">
+                        <li class="nav-item dropdown-nav-item">
+                            <a href="" class="nav-link custom-link d-flex">
+                                <i class='bx bxl-kubernetes nav-icon'></i>
+                                <span class="nav-text">Kubernetes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown-nav-item">
+                            <a href="" class="nav-link custom-link d-flex">
+                                <i class='bx bx-trending-up nav-icon' ></i>
+                                <span class="nav-text">Uptime</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown-nav-item">
+                            <a href="" class="nav-link custom-link d-flex">
+                                <i class='bx bxl-docker nav-icon' ></i>
+                                <span class="nav-text">Docker</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+{{end}}

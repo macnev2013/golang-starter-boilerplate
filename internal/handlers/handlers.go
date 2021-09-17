@@ -4,6 +4,8 @@ import (
 	"net/http"
 
 	"github.com/intrigues/golang-starter-boilerplate/internal/config"
+	"github.com/intrigues/golang-starter-boilerplate/internal/models"
+	"github.com/intrigues/golang-starter-boilerplate/internal/render"
 )
 
 // Repo the repository used by the handlers
@@ -25,6 +27,14 @@ func NewHandlers(r *Repository) {
 	Repo = r
 }
 
-func Home(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("test"))
+func (m *Repository) GetHome(w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "/login", http.StatusTemporaryRedirect)
+}
+
+func (m *Repository) GetLogin(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, r, "login.page.tmpl", &models.TemplateData{})
+}
+
+func (m *Repository) GetDashboard(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, r, "dashboard.page.tmpl", &models.TemplateData{})
 }
