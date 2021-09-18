@@ -97,7 +97,8 @@
 /* box shadows */
 /* ----------------------------- */
 .custom-shadow-1 {
-    box-shadow: 0 .25rem .375rem -.0625rem hsla(0,0%,8%,.12),0 .125rem .25rem -.0625rem hsla(0,0%,8%,.07)!important;
+    /* box-shadow: 0 .25rem .375rem -.0625rem hsla(0,0%,8%,.12),0 .125rem .25rem -.0625rem hsla(0,0%,8%,.07)!important; */
+    /* box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%); */
 }
 
 .vertical-center {

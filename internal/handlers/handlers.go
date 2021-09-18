@@ -38,3 +38,7 @@ func (m *Repository) GetLogin(w http.ResponseWriter, r *http.Request) {
 func (m *Repository) GetDashboard(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r, "dashboard.page.tmpl", &models.TemplateData{})
 }
+
+func (m *Repository) GetUsers(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, r, "users.page.tmpl", &models.TemplateData{})
+}
