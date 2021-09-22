@@ -5,35 +5,36 @@
   <div class="py-3 px-5 bg-green-light align-items-center border-radius-xl">
     <div class="row align-items-center py-5">
       <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3">OpenVPN GUI</h1>
+        <h1 class="display-4 fw-bold lh-1 mb-3">Log in</h1>
         <hr>
         <p class="col-lg-10 fs-4">
           Create quick to deploy and easy to use solution that makes work with small OpenVPN environments a breeze.
         </p>
       </div>
       <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-4 p-md-5 border-radius-lg bg-white">
+        <form class="p-4 p-md-5 border-radius-lg bg-white" action="" method="post">
+          <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <input type="email" class="form-control" id="emailField" name="emailField" placeholder="name@example.com">
+            <label for="emailField">Email address</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control" id="passwordField" name="passwordField" placeholder="Password">
+            <label for="passwordField">Password</label>
           </div>
           <div class="checkbox mb-3">
             <label>
-              <input type="checkbox" value="remember-me"> Remember me
+              <input type="checkbox" value="remember-me" id="rememberMe"> Remember me
             </label>
           </div>
           <div class="row justify-content-between">
             <div class="col-6">
-              <button class="w-100 btn btn-lg text-white bg-green-dark custom-btn" type="submit">Log in
+              <button class="w-100 btn btn-lg text-white bg-green-dark custom-btn" name="log-in" type="submit">Log in
               </button>
             </div>
             <div class="col-6">
-              <button class="w-100 btn btn-lg custom-btn-outline" type="submit">Sign up
-              </button>
+              <a class="w-100 btn btn-lg custom-btn-outline" href="/signup" type="button">Sign up
+              </a>
             </div>
           </div>
           <hr class="my-4">

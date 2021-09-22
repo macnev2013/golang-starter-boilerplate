@@ -34,7 +34,7 @@ func main() {
 		log.Fatal("Error starting theapplication", err)
 	}
 
-	fmt.Println(fmt.Sprintf("Staring application on port %s", portNumber))
+	fmt.Printf("Staring application on port %s", portNumber)
 
 	srv := &http.Server{
 		Addr:    portNumber,
@@ -42,6 +42,7 @@ func main() {
 	}
 
 	err = srv.ListenAndServe()
+	// err = srv.ListenAndServeTLS("localhost.pem", "localhost-key.pem")
 	if err != nil {
 		log.Fatal(err)
 	}

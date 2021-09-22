@@ -20,10 +20,23 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Get("/", handlers.Repo.GetHome)
 
 	mux.Get("/login", handlers.Repo.GetLogin)
+	mux.Post("/login", handlers.Repo.PostLogin)
 
-	mux.Get("/dashboard", handlers.Repo.GetDashboard)
+	mux.Get("/signup", handlers.Repo.GetSignup)
+	mux.Post("/signup", handlers.Repo.PostSignup)
+	mux.Get("/logout", handlers.Repo.GetLogout)
 
-	mux.Get("/users", handlers.Repo.GetUsers)
+	mux.Route("/admin", func(mux chi.Router) {
+		mux.Use(Auth)
+		mux.Get("/dashboard", handlers.Repo.GetDashboard)
+		mux.Route("/users", func(r chi.Router) {
+			r.Get("/all", handlers.Repo.GetUsers)
+			r.Route("/{username}", func(r chi.Router) {
+				r.Get("/activate", handlers.Repo.ActivateUser)
+				r.Get("/deactivate", handlers.Repo.DeactivateUser)
+			})
+		})
+	})
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))

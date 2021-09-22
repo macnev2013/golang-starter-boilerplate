@@ -10,6 +10,7 @@ require (
 	github.com/jinzhu/now v1.1.2 // indirect
 	github.com/justinas/nosurf v1.1.1 // indirect
 	github.com/mattn/go-sqlite3 v1.14.8 // indirect
+	golang.org/x/crypto v0.0.0-20210920023735-84f357641f63 // indirect
 	gorm.io/driver/sqlite v1.1.5 // indirect
 	gorm.io/gorm v1.21.15 // indirect
 )

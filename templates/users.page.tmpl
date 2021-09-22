@@ -22,87 +22,37 @@
     </div>
 </div>
 
-<div class="row d-flex justify-content-between mt-4">
+<div class="row d-flex justify-content-start mt-4">
+
+    {{$user := index .Data "users"}}
+    {{range  $user}}
     <div class="col-4">
-        <div class="bg-blue-lighter border-radius-lg">
+        <div class="border-radius-lg {{if eq .Status 0 }}bg-orange-light{{else}}bg-white{{end}} scale-hover-md">
             <div class="d-flex justify-content-between">
                 <div class="d-flex py-4 px-3">
                     <img src="https://miro.medium.com/max/700/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" alt="logo" width="40"
-                    height="40" class="me-3 ml-3 rounded-circle" />
+                        height="40" class="me-3 ml-3 rounded-circle" />
                     <span>
-                        <p class="m-0 fw-bold">Nevil Macwan</p>
-                        <p class="m-0 small">Devops Engineer</p>
+                        <p class="m-0 fw-bold">{{.Username}}</p>
+                        <p class="m-0 small">{{.Email}}</p>
+                        <p class="m-0 small text-capitalize">{{.Role}}</p>
                     </span>
                 </div>
-                <div class="btn py-4">
-                    <i class='fg-blue-dark bx bx-dots-vertical-rounded fs-4' ></i>
+                <div class="py-4 px-3">
+                    <button class="p-1 m-0 d-flex align-items-center btn" type="button" id="cononectedDeviceAction"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class='bx bx-dots-vertical-rounded fs-4'></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="cononectedDeviceAction">
+                        <li><a class="dropdown-item" href="/admin/users/{{.Username}}/activate">Activate</a></li>
+                        <li><a class="dropdown-item" href="/admin/users/{{.Username}}/deactivate">Deactivate</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div class="col-4">
-
-        <div class="bg-blue-lighter border-radius-lg mb-4">
-            <div class="d-flex justify-content-between">
-                <div class="d-flex py-4 px-3">
-                    <img src="https://scontent.fbdq4-1.fna.fbcdn.net/v/t1.6435-9/72716778_1257473741098443_4707535369053143040_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=973b4a&_nc_ohc=OVIZ3tSQyMQAX8-i5x_&_nc_ht=scontent.fbdq4-1.fna&oh=1985c50dc75a51fe5b5d2873fe87169b&oe=616CC217" alt="logo" width="40"
-                    height="40" class="me-3 ml-3 rounded-circle" />
-                    <span>
-                        <p class="m-0 fw-bold">Manjeetsinh Alonja</p>
-                        <p class="m-0 small">Devops Engineer</p>
-                    </span>
-                </div>
-                <div class="btn py-4">
-                    <i class='fg-blue-dark bx bx-dots-vertical-rounded fs-4' ></i>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="col-4">
-
-        <div class="bg-blue-lighter border-radius-lg mb-4">
-            <div class="d-flex justify-content-between">
-                <div class="d-flex py-4 px-3">
-                    <img src="https://i.stack.imgur.com/lj5Pk.jpg" alt="logo" width="40"
-                    height="40" class="me-3 ml-3 rounded-circle" />
-                    <span>
-                        <p class="m-0 fw-bold">Kavyesh Shah</p>
-                        <p class="m-0 small">Devops Engineer</p>
-                    </span>
-                </div>
-                <div class="btn py-4">
-                    <i class='fg-blue-dark bx bx-dots-vertical-rounded fs-4' ></i>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="col-4">
-
-        <div class="bg-blue-lighter border-radius-lg mb-4">
-            <div class="d-flex justify-content-between">
-                <div class="d-flex py-4 px-3">
-                    <img src="https://pbs.twimg.com/profile_images/897250392022540288/W1T-QjML_400x400.jpg" alt="logo" width="40"
-                    height="40" class="me-3 ml-3 rounded-circle" />
-                    <span>
-                        <p class="m-0 fw-bold">Aman Mishra</p>
-                        <p class="m-0 small">Devops Engineer</p>
-                    </span>
-                </div>
-                <div class="btn py-4">
-                    <i class='fg-blue-dark bx bx-dots-vertical-rounded fs-4' ></i>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+    {{end}}
 </div>
 
 {{end}}
