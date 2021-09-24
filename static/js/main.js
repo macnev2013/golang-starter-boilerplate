@@ -31,17 +31,20 @@ function darkModeApply () {
     } 
 }
 // Apply retrived them to the website
-document.getElementById("toggleDarkMode").addEventListener('click', () => {
-    let toggleDarkMode = document.getElementById("toggleDarkMode");
-    let theme = localStorage.getItem('data-theme'); // Retrieve saved them from local storage
-    if (theme ==='dark'){
-        changeThemeToLight()
-        toggleDarkMode.checked = false
-    }else{
-        changeThemeToDark()
-        toggleDarkMode.checked = true
-    } 
-});
+const toggleButton = document.getElementById("toggleDarkMode")
+if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+        let toggleDarkMode = document.getElementById("toggleDarkMode");
+        let theme = localStorage.getItem('data-theme'); // Retrieve saved them from local storage
+        if (theme ==='dark'){
+            changeThemeToLight()
+            toggleDarkMode.checked = false
+        }else{
+            changeThemeToDark()
+            toggleDarkMode.checked = true
+        } 
+    });
+}
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -50,9 +53,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let theme = localStorage.getItem('data-theme'); // Retrieve saved them from local storage
     if (theme ==='dark'){
         changeThemeToDark()
-        toggleDarkMode.checked = true
+        if (toggleDarkMode) {
+            toggleDarkMode.checked = true
+        }
     }else{
         changeThemeToLight()
-        toggleDarkMode.checked = false
+        if (toggleDarkMode) {
+            toggleDarkMode.checked = false
+        }
     } 
 })

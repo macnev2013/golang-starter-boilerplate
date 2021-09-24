@@ -1,8 +1,9 @@
 {{define "sidebar"}}
 <nav>
-    <div class="sidebar d-flex flex-column p-3 border-radius-xl custom-shadow-1">
-        <div class="profile-info">
-            <label class="d-flex py-4 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#profileCollapse" aria-expanded="false" aria-controls="profileCollapse">
+    <div class="sidebar d-flex flex-column p-3 border-radius-xl">
+        <div class="sidebar-secondary-card">
+            <label class="d-flex align-items-center py-4 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#profileCollapse"
+                aria-expanded="false" aria-controls="profileCollapse">
                 <img src="https://miro.medium.com/max/700/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" alt="logo" width="40"
                     height="40" class="me-3 ml-3 rounded-circle" />
                 <span>
@@ -12,26 +13,28 @@
                     {{end}}
                 </span>
             </label>
-            <div class="collapse my-2" id="profileCollapse">
+            <div class="collapse" id="profileCollapse">
                 <div class="container">
-                    <ul class="nav nav-pills flex-column mb-auto mt-4">
-                        <li class="nav-item dropdown-nav-item">
-                            <a href="" class="nav-link  d-flex">
-                                <i class='bx bx-user nav-icon fg-green-dark bg-green-light' ></i>
+                    <hr class="my-2 mx-3 p-0">
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item nav-item-secondary">
+                            <a href="" class="nav-link nav-link-secondary d-flex">
+                                <i class='bx bx-user nav-icon' aria-hidden="true"></i>
                                 <span class="nav-text">Account</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown-nav-item">
-                            <a href="/logout" class="nav-link  d-flex">
-                                <i class='bx bx-log-out nav-icon fg-green-dark bg-green-light'></i>
+                        <li class="nav-item nav-item-secondary">
+                            <a href="/logout" class="nav-link nav-link-secondary d-flex">
+                                <i class='bx bx-log-out nav-icon' aria-hidden="true"></i>
                                 <span class="nav-text">Sign out</span>
                             </a>
                         </li>
-                        <hr>
+                        <hr class="my-2 mx-3 p-0">
                         <li class="d-flex justify-content-around">
                             <input type="checkbox" class="btn-check" id="toggleDarkMode" autocomplete="off">
-                            <label class="custom-toggle-button d-flex justify-content-center align-items-center" for="toggleDarkMode">
-                                <i class='bx bx-sun'></i>
+                            <label class="custom-toggle-button d-flex justify-content-center align-items-center"
+                                for="toggleDarkMode">
+                                <i class='bx bx-sun' aria-hidden="true"></i>
                             </label>
                         </li>
                     </ul>
@@ -40,58 +43,65 @@
         </div>
 
 
-        <ul class="nav nav-pills flex-column mb-auto mt-4">
-            <li class="nav-item {{if eq .CurrentPage "/admin/dashboard"}}nav-item-active{{end}}">
-                <a href="/admin/dashboard" class="nav-link  d-flex">
-                    <i class='bx bxs-dashboard nav-icon fg-green-dark bg-green-light'></i>
+        <ul class="nav flex-column mb-auto mt-4">
+            <li
+                class="nav-item nav-item-primary {{if eq .CurrentPage "/admin/dashboard"}}nav-item-active nav-item-primary-active{{end}}">
+                <a href="/admin/dashboard" class="nav-link nav-link-primary d-flex">
+                    <i class='bx bxs-dashboard nav-icon' aria-hidden="true"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item {{if eq .CurrentPage "/admin/users/all"}}nav-item-active{{end}}">
-                <a href="/admin/users/all" class="nav-link  d-flex">
-                    <i class='bx bx-group nav-icon fg-green-dark bg-green-light'></i>
+            <li
+                class="nav-item nav-item-primary {{if eq .CurrentPage "/admin/users/all"}}nav-item-active nav-item-primary-active{{end}}">
+                <a href="/admin/users/all" class="nav-link nav-link-primary d-flex">
+                    <i class='bx bx-group nav-icon' aria-hidden="true"></i>
                     <span class="nav-text">Users</span>
                 </a>
             </li>
         </ul>
-        <hr>
-        
-        <div class="profile-info py-1">
-            <label class="py-2 px-3 d-flex justify-content-between link-dark text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapse" aria-expanded="false" aria-controls="appCollapse">
+
+        <div class="sidebar-secondary-card py-1">
+
+            <label class="d-flex justify-content-between py-2 px-3 " type="button"
+                data-bs-toggle="collapse" data-bs-target="#appCollapse" aria-expanded="false"
+                aria-controls="appCollapse">
 
                 <div class="d-flex align-items-center">
-                    <i class='bx bx-lock-open nav-icon fg-green-dark bg-green-light'></i>
+                    <i class='bx bx-lock-open nav-icon' aria-hidden="true"></i>
                     <span class="nav-text">OpenVPN</span>
                 </div>
-
                 <div class="d-flex align-items-center">
-                    <i class='bx bx-down-arrow-alt fs-5'></i>
+                    <i class='bx bx-down-arrow-alt fs-5' aria-hidden="true"></i>
                 </div>
-
             </label>
 
-            <div class="collapse my-2" id="appCollapse">
+            <div class="collapse" id="appCollapse">
                 <div class="container">
-                    <ul class="nav nav-pills flex-column mb-auto mt-4">
-                        <li class="nav-item dropdown-nav-item">
-                            <a href="" class="nav-link  d-flex">
-                                <i class='bx bxl-kubernetes nav-icon fg-green-dark bg-green-light'></i>
+                    <hr class="my-2 mx-3 p-0">
+
+                    <ul class="nav flex-column mb-auto">
+
+                        <li class="nav-item nav-item-secondary">
+                            <a href="" class="nav-link nav-link-secondary d-flex">
+                                <i class='bx bxl-kubernetes nav-icon' aria-hidden="true"></i>
                                 <span class="nav-text">Kubernetes</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown-nav-item">
-                            <a href="" class="nav-link  d-flex">
-                                <i class='bx bx-trending-up nav-icon fg-green-dark bg-green-light' ></i>
+                        <li class="nav-item nav-item-secondary">
+                            <a href="" class="nav-link nav-link-secondary d-flex">
+                                <i class='bx bx-trending-up nav-icon' aria-hidden="true"></i>
                                 <span class="nav-text">Uptime</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown-nav-item">
-                            <a href="" class="nav-link  d-flex">
-                                <i class='bx bxl-docker nav-icon fg-green-dark bg-green-light' ></i>
+                        <li class="nav-item nav-item-secondary">
+                            <a href="" class="nav-link nav-link-secondary d-flex">
+                                <i class='bx bxl-docker nav-icon' aria-hidden="true"></i>
                                 <span class="nav-text">Docker</span>
                             </a>
                         </li>
+
                     </ul>
+
                 </div>
             </div>
 

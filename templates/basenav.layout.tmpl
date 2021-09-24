@@ -9,10 +9,11 @@
     <title>Golang Starter</title>
 </head>
 
-<body class="bg-main">
+<body class="bg-primary">
     {{template "sidebar" .}}
-    
+
     <div class="content px-4 py-3 overflow-auto">
+        {{template "searchbar" .}}
         {{block "content" .}}
         {{end}}
     </div>

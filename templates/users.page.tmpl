@@ -1,38 +1,18 @@
 {{template "basenav" .}}
 
 {{define "content"}}
-<div class="row d-flex justify-content-between">
-    <div class="col-12">
-
-        <div class="card border-0 border-radius-lg bg-white custom-shadow-1">
-            <div class="card-body d-flex align-items-center justify-content-between">
-                <div class="col-auto">
-                    <h2 class="p-0 m-0 fw-bold">Users</h2>
-                </div>
-
-                <div class="col-auto my-auto">
-                    <div class="form-floating my-auto">
-                        <input type="search" class="form-control" id="floatingInput" placeholder="search">
-                        <label for="floatingInput">Search</label>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="row d-flex justify-content-start mt-4">
 
     {{$user := index .Data "users"}}
     {{range  $user}}
-    <div class="col-4">
-        <div class="border-radius-lg {{if eq .Status 0 }}bg-orange-light{{else}}bg-white{{end}} scale-hover-md">
+    <div class="col-4 my-2">
+        <div class="border-radius-lg {{if eq .Status 0 }}card-content-danger{{else}}card-content-primary{{end}} scale-hover-md">
             <div class="d-flex justify-content-between">
                 <div class="d-flex py-4 px-3">
                     <img src="https://miro.medium.com/max/700/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" alt="logo" width="40"
                         height="40" class="me-3 ml-3 rounded-circle" />
-                    <span>
+                    <span class="card-content-primary-body">
                         <p class="m-0 fw-bold">{{.Username}}</p>
                         <p class="m-0 small">{{.Email}}</p>
                         <p class="m-0 small text-capitalize">{{.Role}}</p>
