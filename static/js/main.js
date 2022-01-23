@@ -39,9 +39,11 @@ if (toggleButton) {
         if (theme ==='dark'){
             changeThemeToLight()
             toggleDarkMode.checked = false
+            document.getElementById("current-theme").textContent = "Dark Mode"
         }else{
             changeThemeToDark()
             toggleDarkMode.checked = true
+            document.getElementById("current-theme").textContent = "Light Mode"
         } 
     });
 }

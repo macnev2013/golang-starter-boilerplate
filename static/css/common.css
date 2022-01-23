@@ -367,8 +367,14 @@
     color: var(--login-input-primary-text) !important;
 }
 
-.login-input-primary label {
+.login-input-primary select {
+    border-width: 1px !important;
+    background-color: var(--login-input-primary) !important;
     color: var(--login-input-primary-text) !important;
+}
+
+.login-input-primary label {
+    color: var(--login-label-primary-text) !important;
 }
 
 .login-input-primary input:-webkit-autofill {

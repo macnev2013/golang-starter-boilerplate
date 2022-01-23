@@ -2,10 +2,10 @@
 
 {{define "content"}}
 <div class="container vertical-center">
-  <div class="py-3 px-5 bg-primary-light align-items-center border-radius-xl">
+  <div class="py-3 px-5 card-login-primary bg-primary-light align-items-center border-radius-xl">
     <div class="row align-items-center py-5">
       <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3">Sign Up</h1>
+        <h1 class="display-4 fw-bold lh-1 mb-3">OpenVPN</h1>
         <hr>
         <p class="col-lg-10 fs-4">
           Create quick to deploy and easy to use solution that makes work with small OpenVPN environments a breeze.
@@ -13,8 +13,9 @@
       </div>
       <div class="col-md-10 mx-auto col-lg-5">
         <form class="p-4 p-md-5 border-radius-lg bg-white" action="" method="post">
+          <h2 class="mb-3">Register ❤️</h2>
           <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-3 login-input-primary">
             <input type="text" class="form-control {{with .Form.Errors.Get "usernameField"}}is-invalid{{end}}"
               id="usernameField" name="usernameField" placeholder="Username">
             <label for="usernameField">Username</label>
@@ -22,7 +23,7 @@
             <p class="invalid-feedback">{{.}}</p>
             {{end}}
           </div>
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-3 login-input-primary">
             <input type="email" class="form-control {{with .Form.Errors.Get "emailField"}}is-invalid{{end}}"
               id="emailField" name="emailField" placeholder="name@example.com">
             <label for="emailField">Email address</label>
@@ -30,7 +31,7 @@
             <p class="invalid-feedback">{{.}}</p>
             {{end}}
           </div>
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-3 login-input-primary">
             <input type="password" class="form-control {{with .Form.Errors.Get "passwordField"}}is-invalid{{end}}"
               id="passwordField" name="passwordField" placeholder="Password">
             <label for="passwordField">Password</label>
@@ -38,7 +39,7 @@
             <p class="invalid-feedback">{{.}}</p>
             {{end}}
           </div>
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-3 login-input-primary">
             <select class="form-select {{with .Form.Errors.Get "roleSelector"}}is-invalid{{end}}" id="roleSelector"
               name="roleSelector" aria-label="Select your role">
               <option selected>Select your role</option>
@@ -47,18 +48,19 @@
             </select>
             <label for="roleSelector">Select your role</label>
           </div>
+          <div class="mb-2">
+            <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+          </div>
           <div class="row justify-content-between">
             <div class="col-6">
-              <button class="w-100 btn btn-lg text-white bg-primary-dark custom-btn" name="sign-up" type="submit">Sign up
+              <button class="w-100 btn btn-md text-white bg-primary-dark custom-btn" name="sign-up" type="submit">
+                Create account
               </button>
             </div>
-            <div class="col-6">
-              <a class="w-100 btn btn-lg custom-btn-outline" href="/login" type="button">Back to Log in
-              </a>
-            </div>
           </div>
-          <hr class="my-4">
-          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+          <div class="mt-3">
+            <a class="d-block" href="/login">Already have an account?</a>
+          </div>
         </form>
       </div>
     </div>

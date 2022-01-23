@@ -29,14 +29,6 @@
                                 <span class="nav-text">Sign out</span>
                             </a>
                         </li>
-                        <hr class="my-2 mx-3 p-0">
-                        <li class="d-flex justify-content-around">
-                            <input type="checkbox" class="btn-check" id="toggleDarkMode" autocomplete="off">
-                            <label class="custom-toggle-button d-flex justify-content-center align-items-center"
-                                for="toggleDarkMode">
-                                <i class='bx bx-sun' aria-hidden="true"></i>
-                            </label>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -67,43 +59,11 @@
                 aria-controls="appCollapse">
 
                 <div class="d-flex align-items-center">
-                    <i class='bx bx-lock-open nav-icon' aria-hidden="true"></i>
-                    <span class="nav-text">OpenVPN</span>
-                </div>
-                <div class="d-flex align-items-center">
-                    <i class='bx bx-down-arrow-alt fs-5' aria-hidden="true"></i>
+                    <input type="checkbox" class="d-none" name="btn-check" id="toggleDarkMode">
+                    <i class='bx bx-sun nav-icon' aria-hidden="true"></i>
+                    <span class="nav-text" id="current-theme">Dark Mode</span>
                 </div>
             </label>
-
-            <div class="collapse" id="appCollapse">
-                <div class="container">
-                    <hr class="my-2 mx-3 p-0">
-
-                    <ul class="nav flex-column mb-auto">
-
-                        <li class="nav-item nav-item-secondary">
-                            <a href="" class="nav-link nav-link-secondary d-flex">
-                                <i class='bx bxl-kubernetes nav-icon' aria-hidden="true"></i>
-                                <span class="nav-text">Kubernetes</span>
-                            </a>
-                        </li>
-                        <li class="nav-item nav-item-secondary">
-                            <a href="" class="nav-link nav-link-secondary d-flex">
-                                <i class='bx bx-trending-up nav-icon' aria-hidden="true"></i>
-                                <span class="nav-text">Uptime</span>
-                            </a>
-                        </li>
-                        <li class="nav-item nav-item-secondary">
-                            <a href="" class="nav-link nav-link-secondary d-flex">
-                                <i class='bx bxl-docker nav-icon' aria-hidden="true"></i>
-                                <span class="nav-text">Docker</span>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
 
         </div>
     </div>

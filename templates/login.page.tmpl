@@ -6,7 +6,7 @@
     <div class="row align-items-center py-5">
       
       <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3">Log in</h1>
+        <h1 class="display-4 fw-bold lh-1 mb-3">OpenVPN GUI</h1>
         <hr>
         <p class="col-lg-10 fs-4">
           Create quick to deploy and easy to use solution that makes work with small OpenVPN environments a breeze.
@@ -15,15 +15,17 @@
 
       <div class="col-lg-5 mx-auto">
         <form class="card-login-secondary p-4 p-md-5 border-radius-lg" action="" method="post">
+          <h2 class="mb-3">Welcome back</h2>
           <input type="hidden" name="csrf_token" value="{{.CSRFToken}}"><!-- hidden csrf -->
           <div class="login-input-primary form-floating mb-3">
             <input type="email" class="form-control" id="emailField" name="emailField" placeholder="name@example.com">
             <label for="emailField">Email address</label>
           </div><!-- email field -->
-          <div class="login-input-primary form-floating mb-3">
+          <div class="login-input-primary form-floating mb-2">
             <input type="password" class="form-control" id="passwordField" name="passwordField" placeholder="Password">
             <label for="passwordField">Password</label>
           </div><!-- password field -->
+            <a class="mb-3 d-block" href="/login">Forgot password?</a>
           <div class="checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me" id="rememberMe"> Remember me
@@ -31,16 +33,13 @@
           </div><!-- remember me -->
           <div class="row justify-content-between">
             <div class="col-6">
-              <button class="w-100 btn btn-lg text-white bg-primary-dark custom-btn" name="log-in" type="submit">Log in
+              <button class="w-100 btn btn-md text-white bg-primary-dark custom-btn" name="log-in" type="submit">Log in
               </button>
             </div><!-- login button -->
-            <div class="col-6">
-              <a class="w-100 btn btn-lg custom-btn-outline" href="/signup" type="button">Sign up
-              </a>
-            </div><!-- signup button -->
           </div>
-          <hr class="my-4">
-          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+          <div class="mt-4">
+            <a href="/signup">Don't have an account?</a>
+          </div>
         </form><!-- login form -->
       </div><!-- login form card -->
 

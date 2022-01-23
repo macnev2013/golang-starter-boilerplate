@@ -11,6 +11,7 @@ require (
 	github.com/jinzhu/now v1.1.2 // indirect
 	github.com/justinas/nosurf v1.1.1
 	github.com/mattn/go-sqlite3 v1.14.8 // indirect
+	github.com/rogpeppe/godef v1.1.2 // indirect
 	golang.org/x/crypto v0.0.0-20210920023735-84f357641f63
 	gorm.io/driver/sqlite v1.1.5
 	gorm.io/gorm v1.21.15

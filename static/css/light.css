@@ -122,6 +122,7 @@
 
     --login-input-primary: var(--color-primary);
     --login-input-primary-text: var(--color-1);
+    --login-label-primary-text: var(--color-2);
 
     /* Progressbar Primary */
     --content-progress-primary: var(--color-accent-dark);
