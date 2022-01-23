@@ -1,2 +1,2 @@
 #!/bin/bash
-go build -o app cmd/web/*.go && ./app
+cgo_enabled=0 go build -o app main.go && ./app
