@@ -32,6 +32,8 @@ func New(cfg *config.Config, logger core.Clog, render core.Render, db *db.DB) Ro
 }
 
 func (router *Router) NewRouter() http.Handler {
+	router.logger.Debugf("injecting routes..")
+
 	mux := chi.NewRouter()
 
 	// TODO: go though middleware

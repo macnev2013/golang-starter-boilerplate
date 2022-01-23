@@ -26,23 +26,26 @@ func run() error {
 	// inititating loggers
 	logger := clog.NewLogger(cfg)
 
-	// initiating database connections
-	logger.Debugf("initiating database connections")
+	logger.Debugf("creating new session")
+	session := session.New()
+	cfg.Session = session
+	logger.Debugf("session initialized", cfg.Session)
 
 	// initiating renderer
-	render := render.New(cfg, logger)
-
+	logger.Debugf("initiating render")
+	render := render.New(&cfg, logger)
+	
+	// initiating database connections
+	logger.Debugf("initiating database connections")
 	// initializing database
 	db, err := db.NewDBConnection(cfg, logger)
 	if err != nil {
 		logger.Errorf("error in initializing database: %v", err)
 	}
 
-	session := session.New()
-	cfg.Session = session
-
 	api := api.New(&cfg, logger, render, db)
 	router := api.NewRouter()
+
 	// add this non blocking call
 	if err := server.ListenAndServe(cfg, router, logger); err != nil {
 		logger.Errorf("error starting http server: %v", err)

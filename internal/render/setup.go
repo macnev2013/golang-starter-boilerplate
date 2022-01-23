@@ -19,10 +19,10 @@ type render struct {
 // TemplateCacheType defines type of template cache
 type TemplateCacheType map[string]*template.Template
 
-func New(cfg config.Config, logger core.Clog) core.Render {
+func New(cfg *config.Config, logger core.Clog) core.Render {
 	tc, _ := GenearteTemplateCache()
 	return &render{
-		cfg:           &cfg,
+		cfg:           cfg,
 		logger:        logger,
 		templateCache: tc,
 	}

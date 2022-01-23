@@ -12,10 +12,11 @@ func ListenAndServe(cfg config.Config, router http.Handler, logger core.Clog) er
 	// TODO: add this in go routine
 	// TODO: add option to run with https
 	srv := &http.Server{
-		Addr:    "localhost:" + cfg.Port,
+		Addr:    "0.0.0.0:" + cfg.Port,
 		Handler: router,
 	}
 
+	logger.Debugf("starting new http server on: %s", cfg.Port)
 	err := srv.ListenAndServe()
 	if err != nil {
 		return err

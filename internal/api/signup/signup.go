@@ -27,7 +27,6 @@ func HandlePost(render core.Render, logger core.Clog, cfg *config.Config, db *db
 			errr.ServerError(rw, err, logger)
 			return
 		}
-		logger.Debugf("form content: %+v", r.Form)
 
 		form := forms.New(r.PostForm)
 		form.Required("usernameField", "emailField", "passwordField", "roleSelector")
@@ -50,7 +49,7 @@ func HandlePost(render core.Render, logger core.Clog, cfg *config.Config, db *db
 			Email:             r.Form.Get("emailField"),
 			Password:          string(password_hash),
 			IncorrectPassword: 0,
-			Status:            0,
+			Status:            1,
 			Role:              r.Form.Get("roleSelector"),
 		})
 

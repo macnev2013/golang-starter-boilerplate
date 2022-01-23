@@ -23,7 +23,7 @@ func (render *render) addDefaultData(td *models.TemplateData, r *http.Request) *
 }
 
 // RenderTemplate renders a template
-func (render *render) RenderTemplate(w http.ResponseWriter, r *http.Request, tmpl string, td *models.TemplateData) error {
+func (render *render) RenderTemplate(rw http.ResponseWriter, r *http.Request, tmpl string, td *models.TemplateData) error {
 	var tc TemplateCacheType
 
 	if render.cfg.Env == "prod" {
@@ -42,7 +42,7 @@ func (render *render) RenderTemplate(w http.ResponseWriter, r *http.Request, tmp
 
 	_ = t.Execute(buf, td)
 
-	_, err := buf.WriteTo(w)
+	_, err := buf.WriteTo(rw)
 	if err != nil {
 		render.logger.Errorf("error writing template to browser", err)
 		return err
