@@ -13,14 +13,14 @@ import (
 )
 
 func Init() {
-	err := run
+	err := run()
 	if err != nil {
-		fmt.Println("Error in starting application")
+		fmt.Printf("Error in starting application %v", err)
 	}
 }
 
 func run() error {
-	// initiating configuration
+	// initiating configuratio
 	cfg := config.Load()
 
 	// inititating loggers

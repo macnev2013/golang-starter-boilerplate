@@ -3,7 +3,8 @@ package api
 import (
 	"net/http"
 
-	"github.com/intrigues/golang-starter-boilerplate/internal/helpers"
+	"github.com/intrigues/golang-starter-boilerplate/internal/config"
+	"github.com/intrigues/golang-starter-boilerplate/internal/models"
 	"github.com/justinas/nosurf"
 )
 
@@ -28,11 +29,20 @@ func (router *Router) SessionLoad(next http.Handler) http.Handler {
 
 func (router *Router) Auth(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if !helpers.IsAuthenticated(r) {
+		if !isAuthenticated(r, router.cfg) {
 			router.cfg.Session.Put(r.Context(), "error", "Please login to continue")
 			http.Redirect(w, r, "/login", http.StatusSeeOther)
 			return
 		}
 		next.ServeHTTP(w, r)
 	})
+}
+
+func isAuthenticated(r *http.Request, cfg *config.Config) bool {
+	exists := cfg.Session.Exists(r.Context(), "currentuser")
+	if exists {
+		currentUser := cfg.Session.Get(r.Context(), "currentuser").(models.Users)
+		return !(currentUser.Status == 0)
+	}
+	return exists
 }

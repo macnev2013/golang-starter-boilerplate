@@ -5,19 +5,7 @@ import (
 )
 
 type Config struct {
-	Port string
-	Env  string
-
+	Port    string
+	Env     string
 	Session *scs.SessionManager
-	DB      DBConfig
 }
-
-type (
-	// DBConfig defines database configurations
-	DBConfig struct {
-		Host     string
-		Port     string
-		Password string
-		Name     string
-	}
-)

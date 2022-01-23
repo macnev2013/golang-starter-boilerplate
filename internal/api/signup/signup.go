@@ -6,8 +6,8 @@ import (
 	"github.com/intrigues/golang-starter-boilerplate/core"
 	"github.com/intrigues/golang-starter-boilerplate/internal/config"
 	"github.com/intrigues/golang-starter-boilerplate/internal/db"
+	errr "github.com/intrigues/golang-starter-boilerplate/internal/errors"
 	"github.com/intrigues/golang-starter-boilerplate/internal/forms"
-	"github.com/intrigues/golang-starter-boilerplate/internal/helpers"
 	"github.com/intrigues/golang-starter-boilerplate/internal/models"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -24,7 +24,7 @@ func HandlePost(render core.Render, logger core.Clog, cfg *config.Config, db *db
 	return func(rw http.ResponseWriter, r *http.Request) {
 		err := r.ParseForm()
 		if err != nil {
-			helpers.ServerError(rw, err)
+			errr.ServerError(rw, err, logger)
 			return
 		}
 		logger.Debugf("form content: %+v", r.Form)
